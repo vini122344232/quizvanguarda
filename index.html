@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz – Vanguardas Europeias</title>
+<style>
+  /* Paleta fixa (sem variáveis CSS para compatibilidade) */
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;margin:0;background:#f8f9fb;color:#222;line-height:1.5}
+  .wrap{max-width:900px;margin:40px auto;padding:20px}
+  header h1{margin:.2rem 0}
+  header p{margin:.2rem 0;color:#555}
+  .card{background:#fff;border:1px solid #e6e6e6;border-radius:14px;padding:18px 18px 8px;margin:16px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  fieldset{border:none;margin:0;padding:0}
+  legend{font-weight:700;margin-bottom:10px}
+  .qnum{display:inline-block;background:#eef6ff;padding:.15rem .55rem;border-radius:999px;font-size:.85rem;margin-right:.4rem;border:1px solid #e6e6e6}
+  .options{display:grid;gap:8px;margin:10px 0 6px}
+  label{display:flex;gap:10px;align-items:flex-start;border:1px solid #e6e6e6;border-radius:10px;padding:10px 12px;background:#fff;cursor:pointer}
+  input[type="radio"]{transform:translateY(2px)}
+  .foot{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .badge{font-size:.82rem;border-radius:999px;padding:.15rem .55rem;border:1px solid #e6e6e6;background:#f5f5f7;color:#333}
+  .badge.ok{background:#eaf8f0;border-color:#cfeedd;color:#1f9d55}
+  .badge.bad{background:#feecec;border-color:#f7d8d8;color:#d64545}
+  .explain{font-size:.92rem;color:#555;margin-top:6px;display:none}
+  .explain.show{display:block}
+  .correct{outline:2px solid #1f9d55}
+  .incorrect{outline:2px solid #d64545}
+  .actions{position:sticky;bottom:0;z-index:5;background:linear-gradient(180deg, rgba(248,249,251,0) 0%, rgba(248,249,251,1) 30%);padding:14px 0 4px}
+  button{border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+  .primary{background:#1f6feb;color:#fff}
+  .ghost{background:#fff;border:1px solid #e6e6e6}
+  .score{font-weight:800;font-size:1.1rem;padding:10px 12px;border-radius:12px;border:1px solid #e6e6e6;background:#fff;margin-left:auto}
+  .muted{color:#555}
+  .disabled{opacity:.7;pointer-events:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🎨 Quiz – Vanguardas Europeias</h1>
+      <p class="muted">10 perguntas fáceis. Marque as alternativas e clique em <strong>Finalizar</strong>. Você verá o que errou e a pontuação final.</p>
+    </header>
+
+    <form id="quiz">
+      <!-- Q1 -->
+      <div class="card" data-question="1" data-answer="B" data-explain="O Cubismo (Picasso, Braque) fragmenta a realidade em formas geométricas e múltiplos pontos de vista.">
+        <fieldset>
+          <legend><span class="qnum">1</span>Qual vanguarda é conhecida pelo uso de formas geométricas e fragmentação da realidade?</legend>
+          <div class="options">
+            <label><input type="radio" name="q1" value="A"> A) Surrealismo</label>
+            <label><input type="radio" name="q1" value="B"> B) Cubismo</label>
+            <label><input type="radio" name="q1" value="C"> C) Expressionismo</label>
+            <label><input type="radio" name="q1" value="D"> D) Dadaísmo</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="card" data-question="2" data-answer="B" data-explain="O Surrealismo explora sonhos, inconsciente e o automatismo psíquico (Breton, Dalí, Magritte).">
+        <fieldset>
+          <legend><span class="qnum">2</span>Qual vanguarda valorizava o sonho, o inconsciente e imagens oníricas?</legend>
+          <div class="options">
+            <label><input type="radio" name="q2" value="A"> A) Futurismo</label>
+            <label><input type="radio" name="q2" value="B"> B) Surrealismo</label>
+            <label><input type="radio" name="q2" value="C"> C) Fauvismo</label>
+            <label><input type="radio" name="q2" value="D"> D) Cubismo</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="card" data-question="3" data-answer="C" data-explain="O Futurismo exalta velocidade, máquinas, energia e a vida urbana moderna.">
+        <fieldset>
+          <legend><span class="qnum">3</span>O Futurismo exaltava principalmente:</legend>
+          <div class="options">
+            <label><input type="radio" name="q3" value="A"> A) A natureza e o campo</label>
+            <label><input type="radio" name="q3" value="B"> B) A tradição clássica</label>
+            <label><input type="radio" name="q3" value="C"> C) A velocidade, máquinas e progresso</label>
+            <label><input type="radio" name="q3" value="D"> D) O romantismo</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="card" data-question="4" data-answer="A" data-explain="O Dadaísmo propunha a antiarte, o acaso e a provocação, quebrando regras e convenções.">
+        <fieldset>
+          <legend><span class="qnum">4</span>Qual vanguarda tinha como lema a liberdade total e a quebra de todas as regras?</legend>
+          <div class="options">
+            <label><input type="radio" name="q4" value="A"> A) Dadaísmo</label>
+            <label><input type="radio" name="q4" value="B"> B) Expressionismo</label>
+            <label><input type="radio" name="q4" value="C"> C) Fauvismo</label>
+            <label><input type="radio" name="q4" value="D"> D) Cubismo</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="card" data-question="5" data-answer="B" data-explain="O Expressionismo privilegia a expressão de sentimentos intensos e subjetivos, distorcendo formas e cores.">
+        <fieldset>
+          <legend><span class="qnum">5</span>O Expressionismo buscava principalmente:</legend>
+          <div class="options">
+            <label><input type="radio" name="q5" value="A"> A) Representar fielmente a realidade</label>
+            <label><input type="radio" name="q5" value="B"> B) Mostrar emoções e sentimentos intensos</label>
+            <label><input type="radio" name="q5" value="C"> C) Pintar sonhos e inconsciente</label>
+            <label><input type="radio" name="q5" value="D"> D) Exaltar a tecnologia</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="card" data-question="6" data-answer="A" data-explain="O Fauvismo (Matisse) é marcado por cores vibrantes, planas e liberdade cromática.">
+        <fieldset>
+          <legend><span class="qnum">6</span>O Fauvismo ficou conhecido pelo uso:</legend>
+          <div class="options">
+            <label><input type="radio" name="q6" value="A"> A) De cores vibrantes e livres, sem compromisso com a realidade</label>
+            <label><input type="radio" name="q6" value="B"> B) Da arte geométrica</label>
+            <label><input type="radio" name="q6" value="C"> C) Do inconsciente</label>
+            <label><input type="radio" name="q6" value="D"> D) Da tecnologia</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="card" data-question="7" data-answer="B" data-explain="Pablo Picasso é um dos grandes nomes do Cubismo, ao lado de Georges Braque.">
+        <fieldset>
+          <legend><span class="qnum">7</span>Qual artista é um dos principais nomes do Cubismo?</legend>
+          <div class="options">
+            <label><input type="radio" name="q7" value="A"> A) Salvador Dalí</label>
+            <label><input type="radio" name="q7" value="B"> B) Pablo Picasso</label>
+            <label><input type="radio" name="q7" value="C"> C) Vincent van Gogh</label>
+            <label><input type="radio" name="q7" value="D"> D) Wassily Kandinsky</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="card" data-question="8" data-answer="D" data-explain="O Futurismo influenciou design, publicidade, tipografia e arquitetura pela ênfase na dinâmica e modernidade.">
+        <fieldset>
+          <legend><span class="qnum">8</span>Qual dessas vanguardas influenciou bastante o design, a moda e a arquitetura moderna?</legend>
+          <div class="options">
+            <label><input type="radio" name="q8" value="A"> A) Surrealismo</label>
+            <label><input type="radio" name="q8" value="B"> B) Dadaísmo</label>
+            <label><input type="radio" name="q8" value="C"> C) Cubismo</label>
+            <label><input type="radio" name="q8" value="D"> D) Futurismo</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="card" data-question="9" data-answer="A" data-explain="O Dadaísmo usa o acaso, colagens, ready-mades (Duchamp) e atitude antiarte/antiburguesa.">
+        <fieldset>
+          <legend><span class="qnum">9</span>Qual era uma característica marcante do Dadaísmo?</legend>
+          <div class="options">
+            <label><input type="radio" name="q9" value="A"> A) Uso do acaso, colagens e provocação antiarte</label>
+            <label><input type="radio" name="q9" value="B"> B) Paisagens realistas e luz natural</label>
+            <label><input type="radio" name="q9" value="C"> C) Mitologia clássica idealizada</label>
+            <label><input type="radio" name="q9" value="D"> D) Observação científica da natureza</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="card" data-question="10" data-answer="A" data-explain="Salvador Dalí é um dos principais artistas do Surrealismo, famoso por imagens oníricas.">
+        <fieldset>
+          <legend><span class="qnum">10</span>Qual artista está associado ao Surrealismo?</legend>
+          <div class="options">
+            <label><input type="radio" name="q10" value="A"> A) Salvador Dalí</label>
+            <label><input type="radio" name="q10" value="B"> B) Georges Braque</label>
+            <label><input type="radio" name="q10" value="C"> C) Umberto Boccioni</label>
+            <label><input type="radio" name="q10" value="D"> D) Henri Matisse</label>
+          </div>
+        </fieldset>
+        <div class="foot"><span class="badge">Sem resposta</span></div>
+        <div class="explain"></div>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="finish" class="primary">Finalizar</button>
+        <button type="button" id="retry" class="ghost">Refazer</button>
+        <div id="score" class="score" aria-live="polite">Pontuação: 0/10</div>
+      </div>
+    </form>
+  </div>
+
+<script>
+(function(){
+  'use strict';
+
+  var form = document.getElementById('quiz');
+  var finishBtn = document.getElementById('finish');
+  var retryBtn  = document.getElementById('retry');
+  var scoreBox  = document.getElementById('score');
+
+  function addClass(el, c){ if(el && el.classList){ el.classList.add(c); } }
+  function removeClass(el, c){ if(el && el.classList){ el.classList.remove(c); } }
+
+  function setBadge(card, status){
+    var foot = card.querySelector('.foot');
+    var badge = foot.querySelector('.badge');
+    removeClass(badge,'ok'); removeClass(badge,'bad');
+    removeClass(card,'correct'); removeClass(card,'incorrect');
+
+    if(status === 'ok'){
+      badge.textContent = '✔️ Correta';
+      addClass(badge,'ok'); addClass(card,'correct');
+    } else if(status === 'bad'){
+      badge.textContent = '❌ Errada';
+      addClass(badge,'bad'); addClass(card,'incorrect');
+    } else {
+      badge.textContent = 'Sem resposta';
+    }
+  }
+
+  function toArray(nodeList){
+    return Array.prototype.slice.call(nodeList || []);
+  }
+
+  function grade(){
+    var cards = toArray(form.querySelectorAll('.card'));
+    var total = cards.length;
+    var correct = 0;
+
+    for(var i=0;i<cards.length;i++){
+      var card = cards[i];
+      var qn = card.getAttribute('data-question');
+      var right = card.getAttribute('data-answer');
+      var checked = form.querySelector('input[name="q'+ qn +'"]:checked');
+      var explain = card.querySelector('.explain');
+      removeClass(explain,'show');
+      explain.innerHTML = '';
+
+      if(!checked){
+        setBadge(card, 'none');
+        explain.textContent = 'Resposta correta: ' + right;
+        addClass(explain,'show');
+        continue;
+      }
+
+      if(checked.value === right){
+        correct++;
+        setBadge(card, 'ok');
+      } else {
+        setBadge(card, 'bad');
+        var details = card.getAttribute('data-explain') || '';
+        explain.innerHTML = '<strong>Correta: ' + right + '.</strong> ' + details;
+        addClass(explain,'show');
+      }
+    }
+
+    scoreBox.textContent = 'Pontuação: ' + correct + '/' + total;
+
+    // Desabilita marcações
+    var radios = toArray(form.querySelectorAll('input[type="radio"]'));
+    for(var r=0;r<radios.length;r++){ radios[r].disabled = true; }
+    addClass(finishBtn,'disabled');
+  }
+
+  function resetQuiz(){
+    form.reset();
+    var cards = toArray(form.querySelectorAll('.card'));
+
+    for(var i=0;i<cards.length;i++){
+      var card = cards[i];
+      setBadge(card,'none');
+      removeClass(card,'correct'); removeClass(card,'incorrect');
+      var explain = card.querySelector('.explain');
+      removeClass(explain,'show');
+      explain.textContent = '';
+    }
+
+    scoreBox.textContent = 'Pontuação: 0/10';
+    var radios = toArray(form.querySelectorAll('input[type="radio"]'));
+    for(var r=0;r<radios.length;r++){ radios[r].disabled = false; }
+    removeClass(finishBtn,'disabled');
+
+    if(window.scrollTo){
+      try{ window.scrollTo(0,0); }catch(e){}
+    }
+  }
+
+  form.addEventListener('change', function(e){
+    var target = e.target || e.srcElement;
+    if(target && target.name && target.type === 'radio'){
+      var card = target.closest ? target.closest('.card') : target.parentNode;
+      while(card && !card.classList.contains('card')){ card = card.parentNode; }
+      var badge = card.querySelector('.foot .badge');
+      if(badge && !badge.classList.contains('ok') && !badge.classList.contains('bad')){
+        badge.textContent = 'Respondida';
+      }
+    }
+  });
+
+  finishBtn.addEventListener('click', grade);
+  retryBtn.addEventListener('click', resetQuiz);
+})();
+</script>
+</body>
+</html>
